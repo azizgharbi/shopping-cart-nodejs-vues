@@ -1,0 +1,43 @@
+{
+  "name": "vueshop",
+  "version": "1.0.0",
+  "description": "vue js shoppingcart",
+  "main": "script.js",
+  "scripts": {
+    "start": "node server.js",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/azizgharbi/Vuejs-ShoppingCart-Local-storage.git"
+  },
+  "keywords": [
+    "localstorage",
+    "vuejs",
+    "shoppingcart"
+  ],
+  "author": "aziz gharbi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/azizgharbi/Vuejs-ShoppingCart-Local-storage/issues"
+  },
+  "homepage": "https://github.com/azizgharbi/Vuejs-ShoppingCart-Local-storage#readme",
+  "dependencies": {
+    "axios": "^0.16.2",
+    "body-parser": "^1.15.1",
+    "bootstrap": "^3.3.7",
+    "css-loader": "^0.28.7",
+    "express": "^4.16.1",
+    "express-handlebars": "^3.0.0",
+    "file-loader": "^1.1.5",
+    "jquery": "^3.2.1",
+    "method-override": "^2.3.6",
+    "path": "^0.12.7",
+    "style-loader": "^0.19.0",
+    "url-loader": "^0.6.2",
+    "vue": "^2.4.4"
+  },
+  "devDependencies": {
+    "webpack": "^3.6.0"
+  }
+}

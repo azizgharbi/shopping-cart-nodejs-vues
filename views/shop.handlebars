@@ -1,0 +1,73 @@
+
+<div class="container">
+
+
+    <div class="row">
+        <div class="col-md-12">
+          <div v-for="item in shop">
+			<div class="col-xs-12 col-sm-6 col-md-3">
+				<div class="thumbnail" >
+					<img :src="item.img" height="200px" width="200px" class="img-responsive">
+					<div class="caption">
+						<div class="row">
+							<div class="col-md-4 col-sm-4 col-xs-4 price">
+    							<h3 style="margin:5px auto;"><label>\{{ item.price | toUSD }}</label></h3>
+							</div>
+							<div class="col-md-8 col-sm-8 col-xs-8">
+								<a href="#" class="btn btn-success btn-product" @click="addToCart(item)"><span class="glyphicon glyphicon-shopping-cart"></span> Add to cart</a>
+    						</div>
+						</div>
+						<p>\{{ item.name }}</p>
+					</div>
+				</div>
+			</div>
+      </div>
+      </div> 
+	</div>
+
+	<table id="cart" class="table table-hover table-condensed">
+    				<thead>
+						<tr>
+							<th style="width:50%">Product</th>
+							<th style="width:10%">Price</th>
+							<th style="width:8%">Quantity</th>
+							<th style="width:22%" class="text-center">Subtotal</th>
+							<th style="width:10%"></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr v-for="item in items">
+							<td data-th="Product">
+								<div class="row">
+									<div class="col-sm-2 hidden-xs"><img :src="item.img" height="100px" width="100px"  class="img-responsive"/></div>
+									<div class="col-sm-10">
+										<h4 class="nomargin">\{{ item.name }}</h4>
+										<p>Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet.</p>
+									</div>
+								</div>
+							</td>
+							<td data-th="Price">\{{ item.price | toUSD }}</td>
+							<td data-th="Quantity">
+								<p>\{{ item.quantity }}</p>
+							</td>
+							<td data-th="Subtotal" class="text-center" v-text="subtotal(item.price,item.quantity)"></td>
+							<td class="actions" data-th="">
+                <button class="btn btn-info btn-sm" @click="addQuantity(item)">+</button>
+                <button class="btn btn-info btn-sm" @click="moinQuantity(item)">-</button>
+								<button class="btn btn-danger btn-sm" @click="removeFromCart(item)"><i class="fa fa-trash-o"></i></button>								
+							</td>
+						</tr>
+					</tbody>
+					<tfoot>
+						<tr class="visible-xs">
+							<td class="text-center"><strong>rffr</strong></td>
+						</tr>
+						<tr>
+							<td><a href="#" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
+							<td colspan="2" class="hidden-xs"></td>
+							<td class="hidden-xs text-center"><strong>( \{{productsQuantity}} )  Items - Total : \{{total | roundTwo | toUSD }}</strong></td>
+							<td><a href="#" class="btn btn-success btn-block">Checkout <i class="fa fa-angle-right"></i></a></td>
+						</tr>
+					</tfoot>
+				</table>
+</div>
